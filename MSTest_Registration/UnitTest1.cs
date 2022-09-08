@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using UserRegistration;
 namespace MSTest_Registration
 {
@@ -337,6 +338,22 @@ namespace MSTest_Registration
 
             //Assert
             Assert.AreEqual("Un-Successful Entry", result);
+        }
+
+        //UC11
+        //Multiple Emails passed in Parameterised test method
+
+        [TestMethod]
+        public void MultipleEmails()
+        {
+            //Arrange
+            UserRegister user = new UserRegister();
+
+            //Act
+            var result = user.MultiEmails("hemantdhurve@gmail.com","mrhd@click.com","checkit@out.co.in");
+
+            //Assert
+            Assert.AreEqual("Successful Entry", result);
         }
     }
 }
